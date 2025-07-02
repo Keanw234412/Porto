@@ -1086,6 +1086,7 @@ footer {
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
+    margin-right:0;
 }
 
 .hamburger {
