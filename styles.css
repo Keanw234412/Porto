@@ -9,6 +9,7 @@
     --shadow: rgba(0, 0, 0, 0.1);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --glow: 0 0 20px rgba(102, 126, 234, 0.5);
+
 }
 
 [data-theme="dark"] {
@@ -190,10 +191,8 @@ nav.scrolled {
 }
 
 .nav-container {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
 }
@@ -207,6 +206,7 @@ nav.scrolled {
     background-clip: text;
     transition: var(--transition);
     cursor: pointer;
+    margin-left: 0;
 }
 
 .logo:hover {
@@ -216,6 +216,7 @@ nav.scrolled {
 .nav-links {
     display: flex;
     list-style: none;
+    margin-left: auto;
     gap: 2.5rem;
     align-items: center;
 }
@@ -1201,4 +1202,16 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Matikan particle system sementara */
+#particles-canvas { display: none; }
 
+/* Kurangi kompleksitas cursor */
+.cursor, .cursor-dot { 
+    transition: none !important;
+    will-change: transform;
+}
+
+/* Matikan parallax */
+.hero-content, .shape { 
+    transform: none !important; 
+}
