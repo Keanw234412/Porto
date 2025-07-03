@@ -1111,52 +1111,22 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: flex;
+    .nav-left {
+        flex: 1;  /* BARU: agar logo tetap di kiri */
+    }
+
+    .nav-left .logo {
+        font-size: 1.5rem;  /* BARU: ukuran logo mobile */
     }
 
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: var(--bg-light);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.3s ease;
-        box-shadow: -10px 0 30px var(--shadow);
-    }
-
-    .nav-links.active {
-        right: 0;
+        /* ... */
+        margin-left: 0;  /* BARU: reset margin */
     }
 
     .theme-toggle {
         margin: 0;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cursor,
-    .cursor-dot {
-        display: none;
-    }
-
-    body {
-        cursor: auto;
+        margin-right: 0.5rem;  /* BARU: jarak dengan menu toggle */
     }
 }
 
@@ -1214,5 +1184,10 @@ html {
 /* Matikan parallax */
 .hero-content, .shape { 
     transform: none !important; 
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
