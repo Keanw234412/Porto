@@ -776,6 +776,7 @@ section {
     position: relative;
 }
 
+
 .project-filters {
     display: flex;
     justify-content: center;
@@ -838,6 +839,11 @@ section {
     transform: translateY(30px) scale(0.95);
     position: relative;
     box-shadow: 0 5px 20px var(--shadow);
+}
+.project-link {
+  text-decoration: none;
+  color: inherit; /* Warisi warna teks dari parent */
+  display: block; /* Agar link mencakup seluruh area */
 }
 
 .project-card.visible {
