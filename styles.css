@@ -259,6 +259,12 @@ nav.scrolled {
     transform: translateY(-2px);
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .theme-toggle {
     width: 50px;
     height: 26px;
@@ -268,7 +274,6 @@ nav.scrolled {
     cursor: pointer;
     transition: var(--transition);
     position: relative;
-    margin-left: 1rem;
 }
 
 .theme-toggle-ball {
@@ -775,7 +780,6 @@ section {
     position: relative;
 }
 
-
 .project-filters {
     display: flex;
     justify-content: center;
@@ -839,10 +843,11 @@ section {
     position: relative;
     box-shadow: 0 5px 20px var(--shadow);
 }
+
 .project-link {
   text-decoration: none;
-  color: inherit; /* Warisi warna teks dari parent */
-  display: block; /* Agar link mencakup seluruh area */
+  color: inherit;
+  display: block;
 }
 
 .project-card.visible {
@@ -1127,6 +1132,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
     .nav-left {
         flex: 1;
     }
@@ -1135,14 +1144,35 @@ footer {
         font-size: 1.5rem;
     }
 
-    .mobile-menu-toggle {
+    .nav-right {
+        gap: 0;
+    }
+
+    .nav-controls {
         display: flex;
-        order: 2;
+        align-items: center;
+        gap: 1rem;
     }
 
     .theme-toggle {
+        width: 45px;
+        height: 24px;
         order: 1;
-        margin-right: 1rem;
+    }
+
+    .theme-toggle-ball {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    [data-theme="dark"] .theme-toggle-ball {
+        transform: translateX(21px);
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        order: 2;
     }
 
     .nav-links {
@@ -1227,7 +1257,6 @@ footer {
         color: var(--primary-color);
     }
 
-    /* Mobile menu overlay */
     .mobile-menu-overlay {
         display: none;
         position: fixed;
@@ -1247,7 +1276,6 @@ footer {
         opacity: 1;
     }
 
-    /* Close button inside menu */
     .mobile-close-btn {
         display: block;
         position: absolute;
@@ -1296,7 +1324,6 @@ footer {
         transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    /* Menu header */
     .mobile-menu-header {
         display: block;
         position: absolute;
@@ -1331,14 +1358,12 @@ footer {
     }
 }
 
-/* Hide mobile-only elements on desktop */
 .mobile-menu-overlay,
 .mobile-close-btn,
 .mobile-menu-header {
     display: none;
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1354,7 +1379,6 @@ footer {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Notification */
 .notification {
     position: fixed;
     top: 20px;
@@ -1375,7 +1399,6 @@ footer {
     transform: translateX(0);
 }
 
-/* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
 }
